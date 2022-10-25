@@ -7,5 +7,10 @@
     Things
   </h1>
   <p>Some stuff about things goes here.</p>
+  <form action="{% url 'home' %}">
+    {% csrf_token %}  <!--allows server to auth source of a request to ensure no one is trying to pretend to send request from our browser on their end so they can access our account-->
+    {{ form.as_p }}<!--double curly brackets used to present variables in template-->
+    <input type="submit" value="Post">
+  </form>
 </body>
 </html>
